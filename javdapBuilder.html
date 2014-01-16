@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Customer Support JavDap Command Generator</title>
+  <link rel="stylesheet" type="text/css" href="javdap.css" />
+</head>
+
+<body>
+  <div class="input_form">
+    <h3>JavDap Command Line Generator Form</h3>
+    <p>The values of the fields on this form will be used to create a javdap command line, which can then be used to evaluate the LDAP setup.</p>
+    <p>Enter the Following Information:</p><br />
+    <form action="javdap.php" method="post" autocomplete="on">
+      <label class="label">LDAP_ADDR:</label>
+	  <input type="text" name="ldapAddr" />
+      <label class="label">LDAP_PORT:</label>
+	  <input type="text" name="ldapPort" /> 
+      <label class="label">BASE_DN:</label>
+	  <input type="text" name="baseDN" />
+      <label class="label">BIND_DN:</label>
+	  <input type="text" name="bindDN" />
+      <label class="label">BIND_PASSWORD:</label>
+	  <input type="text" name="bindPass" />
+      <label class="label">USER_ID_TAG:</label>
+	  <input type="text" name="userIDTag" />
+      <label class="label">Test User Name:</label>
+	  <input type="text" name="userName" />
+      <label class="label">Test User Password:</label>
+	  <input type="text" name="userPass" />
+
+      <button type="submit" method="post">Submit</button>
+	  <div class="spacer"></div>
+    </form>
+  </div>
+  <hr>
+  <div class="explanation">
+    <h3>What Do These Do?</h3>
+    <p>An explanation of the fields found in this form...</p><br/>
+	<ul>
+      <li>
+	    <div class="label">LDAP_ADDR||</div>
+		<div class="description">This is the URL or IP address of the LDAP server.  (Get this information from your LDAP administrator)</div>
+        <div class="example"><div class="label">Example:</div> LDAP_ADDR|10.1.40.294|</div>
+	  </li>
+<br/>
+      <li>
+	    <div class="label">LDAP_PORT||</div>
+		<div class="description">This is the port on the LDAP server that e-Library will be communicating with.<br />
+-Port 389 is the default port for non-secure communication between LDAP and e-Library.<br />
+-Port 636 is the default port for secure communication between LDAP and e-Library.</div>
+        <div class="example"><div class="label">Example:</div> LDAP_PORT|389|</div>
+	  </li>
+<br />
+      <li>
+	    <div class="label">BASE_DN||</div>
+		<div class="description">The Base Distinguished name (Get this information from your LDAP administrator)</div>
+		<div class="example"><div class="label">Example:</div> BASE_DN|OU=Staff,DC=pbs,DC=edu|</div>
+	  </li>
+<br />
+      <li>
+	    <div class="label">BIND_DN||</div>
+		<div class="description">This is the Distinguished name that LDAP is looking for to bind to it and get permission to search for the user in LDAP. (Get this information from your LDAP administrator)</div>
+		<div class="example"><div class="label">Example:</div> BIND_DN|CN=Sirsi LDAP Account,OU=Accounts,OU=Student Accounts,DC=pbs,DC=edu|</div>
+	  </li>
+<br />
+      <li>
+	    <div class="label">BIND_PASSWORD||</div>
+		<div class="description">This is the password needed to authenticate the bind user to search the LDAP (Get this information from your LDAP administrator)</div>
+		<div class="example"><div class="label">Example:</div> BIND_PASSWORD|qtpassword|</div>
+	  </li>
+<br />
+      <li>
+	    <div class="label">USER_ID_TAG||</div>
+		<div class="description">This defines what kind of variable in LDAP your LDAP user is.</div>
+		<div class="example"><div class="label">Example:</div> USER_ID_TAG|sAMAccountName|</div>
+	  </li>
+    </ul>
+  </div>
+
+</body>
+
+</html>
